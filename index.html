@@ -172,8 +172,12 @@ document.addEventListener('DOMContentLoaded', function() {
   window.botpress.on("webchat:ready", () => {
     window.botpress.open();
   });
+
+  const randomUserId = 'user_' + Math.random().toString(36).substring(2, 11);
+
   window.botpress.init({
   "botId": "271349b4-50c2-4d68-98ab-dc514c18d354",
+  "userId": randomUserId,
   "configuration": {
     "version": "v2",
     "botName": "Integrated Retail Support Agent",
@@ -196,7 +200,9 @@ document.addEventListener('DOMContentLoaded', function() {
     "proactiveMessageEnabled": false,
     "proactiveBubbleMessage": "Hi! 👋 Need help?",
     "proactiveBubbleTriggerType": "afterDelay",
-    "proactiveBubbleDelayTime": 10
+    "proactiveBubbleDelayTime": 10,
+    "showHistory": false, // 强制不显示历史记录
+    "allowSessions": false // 禁止持久化会话
   },
   "clientId": "d0bd4d08-40a0-4fb6-8948-73340f88a84c",
   "selector": "#webchat"
