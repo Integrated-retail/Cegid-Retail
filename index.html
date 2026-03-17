@@ -169,10 +169,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- In your <body> tag -->
 
+  
   window.botpress.on("webchat:ready", () => {
     window.botpress.open();
   });
 
+  
+  localStorage.clear(); 
+// 如果不想全删，可以用循环只删 bp 开头的项：
+// Object.keys(localStorage).forEach(key => { if(key.includes('bp')) localStorage.removeItem(key); });
   const randomUserId = 'user_' + Math.random().toString(36).substring(2, 11);
 
   window.botpress.init({
