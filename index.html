@@ -183,13 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const email = urlParams.get('email') || '';
     const phone = urlParams.get('phone') || '';
 
-    // 将数据显示在页面上
-    if (firstName) {
-        document.getElementById('user-name').innerText = firstName + " " + lastName;
-    }
-    if (email) {
-        document.getElementById('user-email').innerText = email;
-    }
+    
 
     // --- 逻辑 B: Botpress 初始化 ---
     
