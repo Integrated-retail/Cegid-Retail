@@ -337,7 +337,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
 
 		// 2. 发送触发词（必须和你在 Studio 里写的 'START_MY_WELCOME' 一模一样，注意大小写）
 	    // 建议加 500ms-800ms 延迟，确保 updateUser 已经先一步传到了服务器
-	setTimeout(() => {
+/*	setTimeout(() => {
     console.log("📡 发送自定义事件信号...");
     window.botpressWebChat.sendEvent({
         type: 'custom_event', // 类型必须是 trigger
@@ -346,7 +346,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
         }
     });
 }, 800);	
-			 
+		*/	 
     });
   
   
@@ -364,6 +364,16 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
         }
       });
 
+
+			setTimeout(() => {
+    console.log("📡 发送自定义事件信号...");
+    window.botpress.sendEvent({
+        type: 'custom_event', // 类型必须是 trigger
+        payload: { 
+            action: 'START_MY_WELCOME' // 负载内容
+        }
+    });
+}, 800);	
 
     });
 
